@@ -1,0 +1,12 @@
+class CreateTickets < ActiveRecord::Migration[5.2]
+  def change
+    create_table :tickets do |t|
+      t.integer :ticket_id
+      t.float :price
+      t.date :expiry_date
+      t.date :duration
+
+      t.timestamps
+    end
+  end
+end
