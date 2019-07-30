@@ -4,9 +4,9 @@ class SessionController < ApplicationController
 
   def create
     # find the user by their email address
-    customer = Customer.find_by :emails => params[:email]
+    customer = Customer.find_by :email => params[:email]
     # encrypted password matches the encryped password in the database
-    if Customer.present? && Customer.authenticat(params[:password])
+    if customer.present? && customer.authenticate(params[:password])
       redirect_to root_path
     else
       flash[:error_message]
