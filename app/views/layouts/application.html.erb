@@ -16,7 +16,6 @@
       <% if @current_customer.admin? %>
         <%= link_to "All users", customers_path %>
       <% end %>
-      <%= link_to "Create Mixtape", new_mixtape_path %>
       <%= link_to "Edit Profile", edit_customer_path %>
       <%= link_to "Sign out #{  @current_customer.email }", login_path, :method => 'delete' %>
     <% else %>
