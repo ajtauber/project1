@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_30_223306) do
+ActiveRecord::Schema.define(version: 2019_07_31_054624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "customers", force: :cascade do |t|
-    t.integer "customer_id"
     t.text "name"
     t.text "address"
     t.datetime "created_at", null: false
@@ -25,8 +24,22 @@ ActiveRecord::Schema.define(version: 2019_07_30_223306) do
     t.string "password_digest"
   end
 
-  create_table "instructors", force: :cascade do |t|
+  create_table "customers_instructors", id: false, force: :cascade do |t|
+    t.integer "customer_id"
     t.integer "instructor_id"
+  end
+
+  create_table "customers_resorts", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "resort_id"
+  end
+
+  create_table "customers_tickets", force: :cascade do |t|
+    t.integer "customer_id"
+    t.integer "ticket_id"
+  end
+
+  create_table "instructors", force: :cascade do |t|
     t.text "instructor_name"
     t.float "salary"
     t.text "resort_name"
@@ -37,8 +50,17 @@ ActiveRecord::Schema.define(version: 2019_07_30_223306) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "resorts", force: :cascade do |t|
+  create_table "instructors_resorts", force: :cascade do |t|
+    t.integer "instructor_id"
     t.integer "resort_id"
+  end
+
+  create_table "instructors_tickets", id: false, force: :cascade do |t|
+    t.integer "instructor_id"
+    t.integer "ticket_id"
+  end
+
+  create_table "resorts", force: :cascade do |t|
     t.text "name"
     t.integer "height"
     t.integer "lifts"
@@ -55,12 +77,12 @@ ActiveRecord::Schema.define(version: 2019_07_30_223306) do
   end
 
   create_table "tickets", force: :cascade do |t|
-    t.integer "ticket_id"
     t.float "price"
     t.date "expiry_date"
     t.date "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "customer_name"
   end
 
 end

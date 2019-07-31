@@ -1,0 +1,12 @@
+<h1>All Tickets</h1>
+
+<%= @tickets.each do |ticket| :class => '.themed-grid-col'%>
+
+  <ul>
+    <li>Customer Name: <%= tickets.customr_name, tickets %></li>
+    <li>Price: <%= ticket.price %></li>
+
+    <li>Date: <%= ticket.expiry_date %></li>
+    <li>Duration: <%= ticket.duration %></li>
+  </ul>
+<% end %>

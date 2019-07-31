@@ -5,10 +5,11 @@ class CustomersController < ApplicationController
   def new
     @customer = Customer.new
   end
+  
   def create
     @customer = Customer.new customer_params
 
-    existing_emails = Customer.pluck(:email)
+    # existing_emails = Customer.pluck(:email)
 
     if @customer.save
       session[:customer_id] = @customer.id
@@ -17,8 +18,9 @@ class CustomersController < ApplicationController
       render :new
     end
   end
+
   def edit
-    @customer = @current_customer
+    @customer = Customer.find params[:id]
   end
 
   private

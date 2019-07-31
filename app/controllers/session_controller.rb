@@ -7,9 +7,10 @@ class SessionController < ApplicationController
     customer = Customer.find_by :email => params[:email]
     # encrypted password matches the encryped password in the database
     if customer.present? && customer.authenticate(params[:password])
-      redirect_to root_path
+      session[:customer_id] = customer.id
+      redirect_to root_path # Change this to profile page or ticket page 
     else
-      flash[:error_message]
+      flash[:error_message] = "Invalid email or password"
       redirect_to login_path  #  show them the login form
     end
   end
