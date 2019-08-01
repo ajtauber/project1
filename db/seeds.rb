@@ -15,11 +15,11 @@ t1 = Ticket.create :customer_name => 'AJ', :price => '500.00'
 
 puts "Associations"
 # Customers and Tickets
-t1.customers << c1 << c1
+c1.tickets << t1
 # Customers and Resorts
-r1.customers << c1 << c2 << c3 << c4
+# r1.customers << c1 << c2 
 # Customers and Instructors
-c1.instructors << c1 << c2 << c3
+# c1.instructors << c1 << c2 << c3
 
 #
 # l1.songs << s1

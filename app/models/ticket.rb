@@ -13,8 +13,8 @@
 
 class Ticket < ApplicationRecord
 
-has_and_belongs_to_many :resorts
-has_many :tickets
+belongs_to :resort, :optional => true
+has_and_belongs_to_many :customers
 has_and_belongs_to_many :instructors
 
 end
