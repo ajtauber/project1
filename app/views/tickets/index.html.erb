@@ -1,6 +1,7 @@
-<h1>All Tickets</h1>
 
+<h1 class="ticketh1">All Tickets</h1>
 
+<div class="tickets">
 <ul>
   <% @tickets.each do |ticket| %>
   <li><%= link_to 'tickets', ticket_path(ticket.id) %></li>
@@ -14,3 +15,6 @@
     <li>Duration: <%= ticket.duration %></li>
   </ul>
 <% end %>
+
+
+</div>
