@@ -7,7 +7,9 @@
     <%= cloudinary_js_config %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+
     <%= javascript_include_tag 'application' %>
+
   </head>
 
   <body>
@@ -17,20 +19,34 @@
     <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
     </nav> -->
-
+    <!-- tickets GET    /tickets(.:format)              tickets#index
+  #                 POST   /tickets(.:format)              tickets#create
+  #      new_ticket GET    /tickets/new(.:format)          tickets#new
+  #     edit_ticket GET    /tickets/:id/edit(.:format)     tickets#edit
+  #          ticket GET    /tickets/:id(.:format)          tickets#show -->
     <div class="container">
-    <%= link_to 'Home', root_path %>
+      <nav>
     <% if @current_customer.present? %>
-
-      <%= link_to "Tickets", ticket_path %>
+      <% if @current_customer.admin? %>
+        <%= link_to "All users", customer_path %>
+      <% end %>
+      <!--Add Paths here-->
+      <%= link_to 'New Ticket', new_ticket_path %>
+      |
+      <%= link_to 'Ticket Index', tickets_path %>
+      |
       <%= link_to "Sign out #{ @current_customer.email }", login_path, :method => 'delete' %>
     <% else %>
       <%= link_to 'About Us', about_path %>
       <%= link_to 'Sign Up', new_customer_path %> <!-- new_customer_path = get '/...'-->
       <%= link_to 'Login', login_path %> <!--login_path = get '/login'-->
     <% end %>
-    <%= yield %>
+      </nav>
     </div>
+    <%= yield %>
+    <div id="particles-js"></div>
+
+    <script src="particles.js"></script>
 
   </body>
 </html>

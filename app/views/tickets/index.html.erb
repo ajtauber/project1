@@ -1,9 +1,13 @@
 <h1>All Tickets</h1>
 
-<%= @tickets.each do |ticket| :class => '.themed-grid-col'%>
+
+<ul>
+  <%= @tickets.each do |ticket| %>
+  <li><%= link_to 'tickets', ticket_path(ticket.id) %></li>
+</ul>
 
   <ul>
-    <li>Customer Name: <%= tickets.customr_name, tickets %></li>
+    <li>Customer Name: <%= ticket.customer_name %></li>
     <li>Price: <%= ticket.price %></li>
 
     <li>Date: <%= ticket.expiry_date %></li>

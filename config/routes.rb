@@ -1,10 +1,69 @@
+# == Route Map
+#
+#          Prefix Verb   URI Pattern                     Controller#Action
+#         trestle        /admin                          Trestle::Engine
+#            root GET    /                               session#new
+#       customers GET    /customers(.:format)            customers#index
+#                 POST   /customers(.:format)            customers#create
+#    new_customer GET    /customers/new(.:format)        customers#new
+#   edit_customer GET    /customers/:id/edit(.:format)   customers#edit
+#        customer GET    /customers/:id(.:format)        customers#show
+#                 PATCH  /customers/:id(.:format)        customers#update
+#                 PUT    /customers/:id(.:format)        customers#update
+#                 DELETE /customers/:id(.:format)        customers#destroy
+#         tickets GET    /tickets(.:format)              tickets#index
+#                 POST   /tickets(.:format)              tickets#create
+#      new_ticket GET    /tickets/new(.:format)          tickets#new
+#     edit_ticket GET    /tickets/:id/edit(.:format)     tickets#edit
+#          ticket GET    /tickets/:id(.:format)          tickets#show
+#                 PATCH  /tickets/:id(.:format)          tickets#update
+#                 PUT    /tickets/:id(.:format)          tickets#update
+#                 DELETE /tickets/:id(.:format)          tickets#destroy
+#     instructors GET    /instructors(.:format)          instructors#index
+#                 POST   /instructors(.:format)          instructors#create
+#  new_instructor GET    /instructors/new(.:format)      instructors#new
+# edit_instructor GET    /instructors/:id/edit(.:format) instructors#edit
+#      instructor GET    /instructors/:id(.:format)      instructors#show
+#                 PATCH  /instructors/:id(.:format)      instructors#update
+#                 PUT    /instructors/:id(.:format)      instructors#update
+#                 DELETE /instructors/:id(.:format)      instructors#destroy
+#         resorts GET    /resorts(.:format)              resorts#index
+#                 POST   /resorts(.:format)              resorts#create
+#      new_resort GET    /resorts/new(.:format)          resorts#new
+#     edit_resort GET    /resorts/:id/edit(.:format)     resorts#edit
+#          resort GET    /resorts/:id(.:format)          resorts#show
+#                 PATCH  /resorts/:id(.:format)          resorts#update
+#                 PUT    /resorts/:id(.:format)          resorts#update
+#                 DELETE /resorts/:id(.:format)          resorts#destroy
+#           login GET    /login(.:format)                session#new
+#                 POST   /login(.:format)                session#create
+#                 DELETE /login(.:format)                session#destroy
+#           about GET    /about(.:format)                pages#about
+#                 GET    /tickets/:id(.:format)          tickets#index
+#
+# Routes for Trestle::Engine:
+# tickets_admin_index GET    /tickets(.:format)          tickets_admin/admin#index
+#                     POST   /tickets(.:format)          tickets_admin/admin#create
+#   new_tickets_admin GET    /tickets/new(.:format)      tickets_admin/admin#new
+#  edit_tickets_admin GET    /tickets/:id/edit(.:format) tickets_admin/admin#edit
+#       tickets_admin GET    /tickets/:id(.:format)      tickets_admin/admin#show
+#                     PATCH  /tickets/:id(.:format)      tickets_admin/admin#update
+#                     PUT    /tickets/:id(.:format)      tickets_admin/admin#update
+#                     DELETE /tickets/:id(.:format)      tickets_admin/admin#destroy
+#                root GET    /                           trestle/dashboard#index
+
 Rails.application.routes.draw do
-  get 'resorts/index'
-  get 'resorts/show'
-  get 'resorts/new'
+  get 'instructors/new'
+  get 'instructors/index'
+  get 'instructors/show'
+  get 'instructor/new'
+  get 'instructor/index'
+  get 'instructor/show'
+  # get 'resorts/index'
+  # get 'resorts/show'
+  # get 'resorts/new'
   root :to => 'pages#home'
 
-  # Controller#Action
   resources :customers
   # get '/customer/edit' => 'users#edit', :as => :edit_customer
 
@@ -19,39 +78,6 @@ Rails.application.routes.draw do
 
   ###### About Controller#Action ######
   get '/about' => 'pages#about'
-
-  get '/tickets' => 'tickets#index'
-
-  # ##############################################
-
-  #        runs GET    /runs(.:format)               runs#index
-  #             POST   /runs(.:format)               runs#create
-  #     new_run GET    /runs/new(.:format)           runs#new
-  #    edit_run GET    /runs/:id/edit(.:format)      runs#edit
-  #         run GET    /runs/:id(.:format)           runs#show
-  #             PATCH  /runs/:id(.:format)           runs#update
-  #             PUT    /runs/:id(.:format)           runs#update
-  #             DELETE /runs/:id(.:format)           runs#destroy
-
-
-
-#   Controller#Action
-#    mountains GET    /mountains(.:format)          mountains#index
-#              POST   /mountains(.:format)          mountains#create
-# new_mountain GET    /mountains/new(.:format)      mountains#new
-# edit_mountain GET    /mountains/:id/edit(.:format) mountains#edit
-#     mountain GET    /mountains/:id(.:format)      mountains#show
-#              PATCH  /mountains/:id(.:format)      mountains#update
-#              PUT    /mountains/:id(.:format)      mountains#update
-#              DELETE /mountains/:id(.:format)      mountains#destroy
-
-
-  #
-  # post '/update_user_mountains/:user_id' => 'users#update_mountains', as: 'update_user_mountains'
-  #
-  # post '/update_user_mountain_runs/:mountain_id' => 'mountains#update_runs', as: 'update_user_mountain_runs'
-
-  ##### Summary of what is happening. Found in console with 'rails routes' #####
 
 
 end

@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
   before_action :check_for_login, :only => [:edit, :update]
-  before_action :check_for_admin, :only => [:index]
+  # before_action :check_for_admin, :only => [:index]
 
   def index
     @tickets = Ticket.all
@@ -28,10 +28,14 @@ class TicketsController < ApplicationController
       @ticket = Ticket.find params[:id]
     end
 
+    def destroy
+      session[:ticket_id] = nil
+      redirect_to login_path
+    end
+
     private
-    def customer_params
-        params.require(:customer).permit(:email, :password, :password_confirmation)
+    def ticket_params
+        params.require(:ticket).permit(:customer_name, :price, :duration)
     end
   end
-
 end

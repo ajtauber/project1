@@ -1,18 +1,18 @@
-<h1><%= @ticket.title %></h1>
-
-<%= image_tag @work.image, :alt => @work.title, :class => 'feature' %>
+<h1><%= @ticket.customer_name %></h1>
+<%= image_tag @ticket.image, class => 'feature' if @ticket.image.present? %>
 
 <ul>
-  <li>Title: <%= @work.title %></li>
-  <% if @work.artist.present? %>
-    <li>Artist: <%= link_to @work.artist.name, @work.artist %></li>
-  <% end %>
-  <li>Year: <%= @work.year %></li>
-  <li>Medium: <%= @work.medium %></li>
-  <li>Style: <%= @work.style %></li>
+  <li>Ticket ID: <%= @ticket.id%></li>
+  <li>Customer Name: <%= @ticket.customer_name %></li>
+  <li>Price: <%= @ticket.price %></li>
+
+  <li>Date: <%= @ticket.expiry_date %></li>
+  <li>Duration: <%= @ticket.duration %></li>
 </ul>
 
 <div class="controls">
+  <%= link_to 'Back', root_path %>
   <%= link_to 'Edit Ticket', edit_ticket_path(@ticket) %>
-  <%= link_to 'Delete work', @ticket, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+
+  <%= link_to 'Delete Ticket', @ticket , :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
 </div>
