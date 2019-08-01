@@ -2,7 +2,7 @@
 
 
 <ul>
-  <%= @tickets.each do |ticket| %>
+  <% @tickets.each do |ticket| %>
   <li><%= link_to 'tickets', ticket_path(ticket.id) %></li>
 </ul>
 

@@ -2,11 +2,11 @@ class ResortsController < ApplicationController
   before_action :check_for_login, :only => [:edit, :update]
 
   def index
-    @tickets = Ticket.all
+    @resorts = Resort.all
   end
 
   def new
-    @ticket = Ticket.new
+    @resort = Resort.new
   end
 
   def show
@@ -14,10 +14,10 @@ class ResortsController < ApplicationController
   end
   def create
     check_for_login
-    @ticket = Ticket.new ticket_params
+    @resort = Resort.new resort_params
 
-    if @ticket.save
-      session[:ticket_id] = @ticket.id
+    if @resort.save
+      session[:resort_id] = @resort.id
       redirect_to root_path
     else
       render :new
@@ -29,11 +29,11 @@ class ResortsController < ApplicationController
   end
 
   def edit
-    @ticket = Ticket.find params[:id]
+    @resort = Resort.find params[:id]
   end
 
   private
-  def customer_params
-    params.require(:customer).permit(:email, :password, :password_confirmation)
+  def resort_params
+    params.require(:name).permit(:lifts, :height, :location)
   end
 end

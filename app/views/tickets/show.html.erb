@@ -1,8 +1,6 @@
 <h1><%= @ticket.customer_name %></h1>
-<%= image_tag @ticket.image, class => 'feature' if @ticket.image.present? %>
 
 <ul>
-  <li>Ticket ID: <%= @ticket.id%></li>
   <li>Customer Name: <%= @ticket.customer_name %></li>
   <li>Price: <%= @ticket.price %></li>
 

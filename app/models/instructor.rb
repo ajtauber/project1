@@ -15,5 +15,7 @@
 #
 
 class Instructor < ApplicationRecord
-  
+has_and_belongs_to_many :customers
+has_and_belongs_to_many :resorts
+
 end

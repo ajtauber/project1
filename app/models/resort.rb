@@ -26,8 +26,8 @@
 
 # has_one = one-to-one
 class Resort < ApplicationRecord
-has_and_belongs_to_many:customers
-has_many :tickets
-has_many :instructors
-has_many :restaurants
+has_and_belongs_to_many :customers
+has_and_belongs_to_many :tickets
+has_and_belongs_to_many :instructors
+# has_and_belongs_to_many :restaurants
 end

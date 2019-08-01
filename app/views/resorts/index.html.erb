@@ -2,21 +2,16 @@
 
 
 <ul>
-  <%= @tickets.each do |ticket| %>
-  <li><%= link_to 'tickets', ticket_path(ticket.id) %></li>
+  <%= @resorts.each do |resort| %>
+  <li><%= link_to 'resorts', resort_path(resort.id) %></li>
 </ul>
 
   <ul>
-    <li>Customer Name: <%= tickets.customer_name, tickets %></li>
-    <li>Price: <%= ticket.price %></li>
+    <li>Resort Name: <%= resort.name%></li>
+    <li>Lifts: <%= resort.lifts %></li>
 
-    <li>Date: <%= ticket.expiry_date %></li>
-    <li>Duration: <%= ticket.duration %></li>
+    <li>Height: <%= resort.height %></li>
+    <li>Location: <%= resort.location %></li>
+    <li>Image: <%=image_tag resort.image %></li>
   </ul>
 <% end %>
-
-
-<div class="controls">
-  <%= link_to "Edit Tickets", edit_ticket_path(@ticket) %>
-  <%= link_to "Delete artist", @artist, :method => 'delete', :data => {:confirm => 'Are you sure?'} %>
-</div>

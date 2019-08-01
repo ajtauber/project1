@@ -28,14 +28,24 @@
       <nav>
     <% if @current_customer.present? %>
       <% if @current_customer.admin? %>
-        <%= link_to "All users", customer_path %>
+        <%= link_to "All Customers", customer_path %>
       <% end %>
       <!--Add Paths here-->
       <%= link_to 'New Ticket', new_ticket_path %>
       |
+      <%= link_to 'All Tickets', tickets_path %> <!-- All tickets-->
+      |
+      <%= link_to 'All Resorts', resorts_path %>
+      |
+      <%= link_to 'New Resorts', new_resort_path %>
+      |
       <%= link_to 'Ticket Index', tickets_path %>
       |
-      <%= link_to "Sign out #{ @current_customer.email }", login_path, :method => 'delete' %>
+      <%= link_to 'Edit Profile' , edit_customer_path %>
+      |
+      <%= link_to 'View Profile' , customer_path(@current_customer) %>
+      |
+      <%= link_to "Log out #{ @current_customer.email }", login_path, :method => 'delete' %>
     <% else %>
       <%= link_to 'About Us', about_path %>
       <%= link_to 'Sign Up', new_customer_path %> <!-- new_customer_path = get '/...'-->
@@ -44,9 +54,7 @@
       </nav>
     </div>
     <%= yield %>
-    <div id="particles-js"></div>
 
-    <script src="particles.js"></script>
 
   </body>
 </html>

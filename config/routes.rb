@@ -53,19 +53,19 @@
 #                root GET    /                           trestle/dashboard#index
 
 Rails.application.routes.draw do
-  get 'instructors/new'
-  get 'instructors/index'
-  get 'instructors/show'
-  get 'instructor/new'
-  get 'instructor/index'
-  get 'instructor/show'
+  # get 'instructors/new'
+  # get 'instructors/index'
+  # get 'instructors/show'
+  # get 'instructor/new'
+  # get 'instructor/index'
+  # get 'instructor/show'
   # get 'resorts/index'
   # get 'resorts/show'
   # get 'resorts/new'
-  root :to => 'pages#home'
+  root :to => 'pages#about'
 
-  resources :customers
-  # get '/customer/edit' => 'users#edit', :as => :edit_customer
+  resources :customers, :except => [:edit]
+  get '/customer/edit' => 'customers#edit', :as => :edit_customer
 
   resources :tickets
   resources :instructors
