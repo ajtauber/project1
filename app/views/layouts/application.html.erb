@@ -25,7 +25,7 @@
   #     edit_ticket GET    /tickets/:id/edit(.:format)     tickets#edit
   #          ticket GET    /tickets/:id(.:format)          tickets#show -->
     <div class="container">
-      <nav>
+      <nav class="nav">
     <% if @current_customer.present? %>
       <% if @current_customer.admin? %>
         <%= link_to "All Customers", customer_path %>
@@ -42,10 +42,14 @@
 
       <%= link_to "Log out #{ @current_customer.email }", login_path, :method => 'delete', :class => 'nav-right' %>
     <% else %>
+    <div class="nav-login">
       <%= link_to 'About Us', about_path %>
+      |
       <%= link_to 'Sign Up', new_customer_path %> <!-- new_customer_path = get '/...'-->
+      |
       <%= link_to 'Login', login_path %> <!--login_path = get '/login'-->
     <% end %>
+    <div>
       </nav>
     </div>
     <%= yield %>

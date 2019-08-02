@@ -1,6 +1,16 @@
 body {
-  background:blue;
+  background-image: url('images/background.jpg');
+  background: lightblue;
   color: white;
+}
+/* Tables  */
+table, th, td{
+  margin-left: 300px;
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td{
+    padding: 15px;
 }
 
 .title{
@@ -11,11 +21,10 @@ body {
   margin-top: 10px;
   margin-left: 10px;
 }
+
 .login{
   margin: 100px;
-  border: 3px solid black;
 }
-
 
 ul{
   list-style: none;
@@ -23,23 +32,49 @@ ul{
 
 /* NAV SECTION */
 .nav{
-  color: white;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    width: 1100px;
+    text-align: right;
+    background: black;
+    color: white;
 }
-.nav-right{
+
+.nav-login{
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  width: 1500px;
   text-align: right;
+  background: black;
+  color: white;
 }
 
 /* TICKET PAGE */
 .tickets{
-  border: 3px solid black;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  text-align: right;
+  background: black;
+  color: white;
   text-align: left;
-  margin-left: 100px;
+
 }
 .ticketh1{
-  margin-left: 145px;
+  text-align: center;
 }
 
+/* Login Page */
+.container{
 
+}
+
+/* Application  */
+.nav{
+
+}
 
 .profile{
   text-align: center;
@@ -49,4 +84,24 @@ ul{
 
 .address{
 
+}
+/* View Profile Page  */
+.view{
+
+  text-align: center;
+}
+/* About Page */
+.facts{
+  margin-left: 100px;
+}
+/*  */
+.box{
+  margin: 0 auto;
+  width:400px;
+  height:400px;
+}
+
+.white {
+  background: grey;
+  color: black;
 }

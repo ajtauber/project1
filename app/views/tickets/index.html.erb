@@ -1,20 +1,20 @@
 
-<h1 class="ticketh1">All Tickets</h1>
+<h1 class="pulse">All Tickets</h1>
+<table>
+    <% @tickets.each do |ticket| %>
+    <th><%= link_to 'Customer_Tickets', ticket_path(ticket.id) %></th>
 
-<div class="tickets">
-<ul>
-  <% @tickets.each do |ticket| %>
-  <li><%= link_to 'tickets', ticket_path(ticket.id) %></li>
-</ul>
 
-  <ul>
-    <li>Customer Name: <%= ticket.customer_name %></li>
-    <li>Price: <%= ticket.price %></li>
-
-    <li>Date: <%= ticket.expiry_date %></li>
-    <li>Duration: <%= ticket.duration %></li>
-  </ul>
+  <tr>
+    <td>Customer Name:</td>
+    <td><%= ticket.customer_name %></td>
+    <td>Price: </td>
+    <td><%= ticket.price %></td>
+    <td>Date: </td>
+    <td> <%= ticket.expiry_date %></td>
+    <td>Duration: </td>
+    <td><%= ticket.duration %></td>
+  </tr>
 <% end %>
-
-
 </div>
+</table>
