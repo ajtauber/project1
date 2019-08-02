@@ -10,9 +10,9 @@ t1 = Ticket.create :customer_name => 'AJ', :price => '500.00'
 t2 = Ticket.create :customer_name => 'John', :price => '200.00'
 t3 = Ticket.create :customer_name => 'Joel', :price => '50.00'
 #
-# Resort.destroy_all
-# puts "Creating Resorts"
-# r1 = Resort.create :
+Resort.destroy_all
+puts "Creating Resorts"
+r1 = Resort.create :name => 'Whister Blackcomb', :height => '2,184', :lifts => '37', :location => 'Vancouver, Canada', :runs => '200'
 
 
 

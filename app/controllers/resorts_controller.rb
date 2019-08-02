@@ -10,7 +10,7 @@ class ResortsController < ApplicationController
   end
 
   def show
-
+    @resort = Resort.find params[:id]
   end
   def create
     check_for_login
@@ -34,6 +34,6 @@ class ResortsController < ApplicationController
 
   private
   def resort_params
-    params.require(:name).permit(:lifts, :height, :location)
+    params.require(:name).permit(:lifts, :height, :location, :email, :password )
   end
 end

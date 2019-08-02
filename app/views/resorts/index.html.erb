@@ -1,17 +1,18 @@
-<h1>All Resorts</h1>
+<h1 class="pulse">All Resorts</h1>
+<table>
+  <% @resorts.each do |resort| %>
+  <th><%= link_to 'resorts', resort_path(resort.id) %></th>
 
+  <tr>
+    <td>Resort Name: </td>
+    <td><%= resort.name%></td>
+    <td>Lifts: </td
+    <td> <%= resort.lifts %></td>
 
-<ul>
-  <%= @resorts.each do |resort| %>
-  <li><%= link_to 'resorts', resort_path(resort.id) %></li>
-</ul>
-
-  <ul>
-    <li>Resort Name: <%= resort.name%></li>
-    <li>Lifts: <%= resort.lifts %></li>
-
-    <li>Height: <%= resort.height %></li>
-    <li>Location: <%= resort.location %></li>
-    <li>Image: <%=image_tag resort.image %></li>
-  </ul>
+    <td>Height: </td>
+    <td><%= resort.height %></td>
+    <td>Location:</td>
+    <td><%= resort.location %></td>
+    </tr>
 <% end %>
+</table>

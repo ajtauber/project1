@@ -39,6 +39,7 @@
       |
       <%= link_to 'View Profile' , customer_path(@current_customer) %>
       |
+      <%= link_to 'All Resorts' , resorts_path %>
 
       <%= link_to "Log out #{ @current_customer.email }", login_path, :method => 'delete', :class => 'nav-right' %>
     <% else %>
