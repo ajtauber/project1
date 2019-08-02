@@ -12,6 +12,7 @@ class CustomersController < ApplicationController
     # existing_emails = Customer.pluck(:email)
 
     if @customer.save
+      # session[:customer_id] = @customer.id
       @customer = Customer.find(params[:id])
       redirect_to root_path
     else
