@@ -34,6 +34,6 @@ class ResortsController < ApplicationController
 
   private
   def resort_params
-    params.require(:name).permit(:lifts, :height, :location, :email, :password )
+    params.require(:resort).permit(:name, :height, :lifts, :runs )
   end
 end

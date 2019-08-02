@@ -1,0 +1,21 @@
+<div class="resorts">
+  <h1 class="fontalicious">New Resort</h1>
+  <div class="resorts">
+  <%= form_for @resort do |f|%>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.label :height %>
+    <%= f.text_field :height %>
+
+    <%= f.label :lifts %>
+    <%= f.text_field :lifts %>
+
+    <%= f.label :runs %>
+    <%= f.text_field :runs %>
+
+
+</div>
+
+  <%= f.submit %>
+<% end %>
+</div>
