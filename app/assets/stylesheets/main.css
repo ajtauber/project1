@@ -30,15 +30,16 @@ ul{
   list-style: none;
 }
 
-/* NAV SECTION */
+/* NAV Bars */
 .nav{
     text-align: center;
     display: flex;
     justify-content: space-between;
-    width: 1100px;
-    text-align: right;
+    width: 1200px;
     background: black;
     color: white;
+    padding-left: 25px;
+    font-size: 20px;
 }
 
 .nav-login{
@@ -54,12 +55,10 @@ ul{
 /* TICKET PAGE */
 .tickets{
   text-align: center;
-  display: flex;
-  justify-content: space-around;
-  text-align: right;
+
   background: black;
   color: white;
-  text-align: left;
+
 
 }
 .ticketh1{
@@ -72,10 +71,6 @@ ul{
 }
 
 /* Application  */
-.nav{
-
-}
-
 .profile{
   text-align: center;
   margin-top: 100px;
@@ -104,4 +99,15 @@ ul{
 .white {
   background: grey;
   color: black;
+}
+
+/* Home Page */
+.center{
+  text-align: center;
+  /* margin-left: 100px; */
+}
+.rows {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }

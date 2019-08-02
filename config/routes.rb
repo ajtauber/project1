@@ -53,7 +53,7 @@
 #                root GET    /                           trestle/dashboard#index
 
 Rails.application.routes.draw do
-  root :to => 'pages#about'
+  root :to => 'pages#home'
 
   resources :customers, :except => [:edit]
   get '/customer/edit' => 'customers#edit', :as => :edit_customer
