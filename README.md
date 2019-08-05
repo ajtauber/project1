@@ -91,6 +91,7 @@ You will be working **individually** for this project. Show us what you've got!
 * bootstrap
 * cloudinary
 
+
 ![Title](/readme-images/ski1.png)
 
 <!-- ![Title](/readme-images/Routes1.png) -->
@@ -98,3 +99,8 @@ You will be working **individually** for this project. Show us what you've got!
 
 
 ![alt](/readme-images/ERDiagram.png)
+
+
+##### Live Link
+
+https://ski-resorts.herokuapp.com/
