@@ -1,6 +1,10 @@
 # README
+
+## Live Link
+
+https://ski-resorts.herokuapp.com/
+
 ## PROJECT #1 Description
-### DESCRIPTION
 
 It's time to put everything that you've learned in the past 5 weeks together! For project #1 you will use your knowledge of front and back-end web development to produce an awesome web application that can be used by friends, family or any of the other billions of people who use the Internet. The type of web application you create is your choice.
 
@@ -52,10 +56,3 @@ You will be working **individually** for this project. Show us what you've got!
 ![Title](/readme-images/ski1.png)
 
 <!-- ![Title](/readme-images/Routes1.png) -->
-**ER Diagram**
-
-
-
-##### Live Link
-
-https://ski-resorts.herokuapp.com/
