@@ -55,8 +55,6 @@ You will be working **individually** for this project. Show us what you've got!
 **ER Diagram**
 
 
-![alt](/readme-images/ERDiagram.png)
-
 
 ##### Live Link
 
