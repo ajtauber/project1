@@ -8,7 +8,7 @@ gem 'figaro'
 gem 'trestle' # Admin Layout
 gem 'jquery-rails'
 gem 'bootstrap'
-gem 'administrate' # Admin Layout
+gem 'administrate' , '>= 0.12.0' # Admin Layout
 gem 'cloudinary'
 
 
@@ -23,7 +23,7 @@ gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '~> 6.0', '>= 6.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
