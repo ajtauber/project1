@@ -7,7 +7,7 @@ gem 'open-weather'
 gem 'figaro'
 gem 'trestle' # Admin Layout
 gem 'jquery-rails'
-gem 'bootstrap'
+gem 'bootstrap', '>= 5.0.0'
 gem 'administrate' # Admin Layout
 gem 'cloudinary'
 
