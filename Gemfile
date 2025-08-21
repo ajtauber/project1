@@ -5,10 +5,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'open-weather'
 
 gem 'figaro'
-gem 'trestle' # Admin Layout
+gem 'trestle' , '>= 0.8.13' # Admin Layout
 gem 'jquery-rails'
 gem 'bootstrap'
-gem 'administrate' # Admin Layout
+gem 'administrate' , '>= 0.12.0' # Admin Layout
 gem 'cloudinary'
 
 
@@ -17,7 +17,7 @@ gem 'cloudinary'
 ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2.3'
+gem 'rails', '~> 7.1.5', '>= 7.1.5.2'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
